@@ -3,6 +3,7 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithPopup,
+  signOut,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
@@ -18,11 +19,14 @@ const AuthProvider = ({ children }) => {
   const googleSignIn = () => signInWithPopup(auth, googleProvder);
   const githubSignIn = () => signInWithPopup(auth, githubProvider);
 
+  const signoutUser = () => signOut(auth);
+
   const authInfo = {
     googleSignIn,
     githubSignIn,
     loading,
     user,
+    signoutUser,
   };
 
   useEffect(() => {

@@ -16,21 +16,22 @@ const BannerCard = () => {
         animate={{ scale: 1, transition: { duration: 4 } }}
         className="sm:text-4xl text-2xl font-bold font-kaushan"
       >
-        Live 
+        Live
         <motion.span
           animate={{
             color: ["#ff5733", "#33ff33", "#8a33ff"],
             transition: { duration: 2, repeat: Infinity },
           }}
         >
-{' '} Anywhere,
+          {" "}
+          Anywhere,
         </motion.span>{" "}
         Work Everywhere
       </motion.h1>
       <p className="py-6">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-        excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
-        id nisi.
+        A platform for job seekers and givers. Discover jobs, hire talent —
+        globally, effortlessly. Connecting job seekers and employers without
+        borders. Find talent or your next opportunity — anytime, anywhere.
       </p>
       <button className="btn btn-primary">Get Started</button>
     </div>

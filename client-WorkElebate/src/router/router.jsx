@@ -5,6 +5,7 @@ import { Signin, SignUp } from "../modules/Auth";
 import AuthLayout from "../modules/Auth/AuthLayout";
 import AuthSidebar from "../modules/Auth/components/AuthSidebar";
 import ForgotPass from "../modules/Auth/pages/ForgotPass";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
 
       {
         path: "signup",
-        Component: SignUp,
+        element: (
+          <ProtectedRoute>
+            <SignUp />,
+          </ProtectedRoute>
+        ),
       },
       {
         path: "forgot-pass",

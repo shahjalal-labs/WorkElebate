@@ -1,14 +1,17 @@
 import { motion } from "motion/react";
 import { Link, useNavigate } from "react-router";
 import { topToBottom } from "../../../animation/motion";
+import useAuth from "../../../hooks/useAuth";
+import Signout from "../../Auth/components/Signout";
 
 const Navbar = () => {
+  const { user } = useAuth();
+
   const navigate = useNavigate();
   return (
-    <motion.nav className="navbar bg-base-100 shadow-sm"
-      {
-        ... topToBottom
-      }
+    <motion.nav
+      className="navbar bg-base-100 shadow-sm z-10 sticky top-[8px]"
+      {...topToBottom}
     >
       <div className="navbar-start">
         <div className="dropdown">
@@ -87,9 +90,15 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/auth/signin" className="btn">
-          Login
-        </Link>
+        {user ? (
+          <Signout>
+            <button className="btn btn-soft btn-primary">Sign Out</button>
+          </Signout>
+        ) : (
+          <Link to="/auth/signin" className="btn">
+            Sign In
+          </Link>
+        )}
       </div>
     </motion.nav>
   );

@@ -1,13 +1,41 @@
 import { Button } from "../../shared/ui";
 import { Facebook, Github } from "lucide-react";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router";
+import useAuth from "../../../hooks/useAuth";
 
 const SocialLogin = () => {
+  const { googleSignIn } = useAuth();
+
+  const navigate = useNavigate();
+
+  const location = useLocation();
+  console.log(location, "SocialLogin.jsx", 14);
+
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    const user = await googleSignIn();
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Sign in Success!",
+      text: "You have successfully signed in",
+      showConfirmButton: false,
+      timer: 2000,
+    });
+    setTimeout(() => {
+      navigate("/");
+    }, 3000);
+  };
   return (
     <div>
       <div className="divider mt-5">Or continue with</div>
       <div className="flex justify-center gap-3 *:btn-accen *:rounded-full gap-5">
         {/* <Button>Google</Button> */}
-        <button className="btn bg-white text-black border-[#e5e5e5]">
+        <button
+          className="btn bg-white text-black border-[#e5e5e5]"
+          onClick={handleGoogleSignIn}
+        >
           <svg
             aria-label="Google logo"
             width="16"
