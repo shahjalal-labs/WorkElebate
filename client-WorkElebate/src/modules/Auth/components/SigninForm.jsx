@@ -4,16 +4,19 @@ import SocialLogin from "./SocialLogin";
 
 const SigninForm = () => {
   return (
-    <form className="flex-1 bg-base-200 border-base-300 border rounded-box   w-fit   p-4">
+    <form
+      className="flex-1 bg-base-200 border-base-300 border rounded-box   w-fit   p-4
+      max-sm:max-w-[300px]      "
+    >
       <h2 className="text-gray-500 text-2xl text-center font-bold">
         Sign In Now
       </h2>
-      <fieldset className="w-xs p-4 fieldset">
+      <fieldset className="p-4 fieldset">
         <Input
           type="email"
           label="Email"
           placeholder="Write your email"
-          className="mb-2 w-full sm:min-w-[400px] input-info rounded-full"
+          className="mb-2 w-full sm:min-w-[400px] input-info rounded-full max-sm:w-"
         />
         <Input
           type="email"

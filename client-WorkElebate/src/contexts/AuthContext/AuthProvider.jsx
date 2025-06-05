@@ -1,16 +1,40 @@
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithPopup,
+} from "firebase/auth";
 import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
 import { AuthContext } from "./AuthContext";
 import { auth } from "../../firebase/firebase.init";
-// import { onAuthStateChanged } from "firebase/auth";
 
 const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
+  const googleProvder = new GoogleAuthProvider();
 
+  const githubProvider = new GithubAuthProvider();
+
+  const googleSignIn = () => signInWithPopup(auth, googleProvder);
+  const githubSignIn = () => signInWithPopup(auth, githubProvider);
+
+  const authInfo = {
+    googleSignIn,
+    githubSignIn,
+    loading,
+    user,
+  };
+
+  useEffect(() => {
+    const cleanUp = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setLoading(false);
+    });
+    return () => cleanUp();
+  }, []);
   return (
     <>
-      <AuthContext.Provider value={null}>{children}</AuthContext.Provider>
+      <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
     </>
   );
 };

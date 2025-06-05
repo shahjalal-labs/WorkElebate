@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
 import { RootLayout } from "../modules/shared/Layout";
-import { Signin } from "../modules/Auth";
+import { Signin, SignUp } from "../modules/Auth";
 import AuthLayout from "../modules/Auth/AuthLayout";
 import AuthSidebar from "../modules/Auth/components/AuthSidebar";
+import ForgotPass from "../modules/Auth/pages/ForgotPass";
 
 const router = createBrowserRouter([
   {
@@ -29,9 +30,14 @@ const router = createBrowserRouter([
         path: "signin",
         Component: Signin,
       },
+
       {
-        path: "sidebar",
-        Component: AuthSidebar,
+        path: "signup",
+        Component: SignUp,
+      },
+      {
+        path: "forgot-pass",
+        Component: ForgotPass,
       },
     ],
   },
