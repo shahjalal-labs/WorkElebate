@@ -16,10 +16,19 @@ const AuthProvider = ({ children }) => {
 
   const githubProvider = new GithubAuthProvider();
 
-  const googleSignIn = () => signInWithPopup(auth, googleProvder);
-  const githubSignIn = () => signInWithPopup(auth, githubProvider);
+  const googleSignIn = () => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvder);
+  };
+  const githubSignIn = () => {
+    setLoading(true);
+    return signInWithPopup(auth, githubProvider);
+  };
 
-  const signoutUser = () => signOut(auth);
+  const signoutUser = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
 
   const authInfo = {
     googleSignIn,
