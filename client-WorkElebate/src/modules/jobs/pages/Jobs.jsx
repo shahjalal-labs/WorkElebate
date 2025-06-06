@@ -12,7 +12,7 @@ const Jobs = ({ jobPromise }) => {
       {/* render jobs */}
       <div className="flex justify-center gap-10 flex-wrap my-16">
         {jobs.map((job) => (
-          <Jobcard key={job?.id} job={job} />
+          <Jobcard key={job?._id} job={job} />
         ))}
       </div>
     </div>

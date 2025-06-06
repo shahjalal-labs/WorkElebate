@@ -3,11 +3,11 @@ import { Link, useNavigate } from "react-router";
 import { topToBottom } from "../../../animation/motion";
 import useAuth from "../../../hooks/useAuth";
 import Signout from "../../Auth/components/Signout";
+import Brand from "../ui/Brand";
 
 const Navbar = () => {
   const { user } = useAuth();
 
-  const navigate = useNavigate();
   return (
     <motion.nav
       className="navbar bg-base-100 shadow-sm z-10 sticky top-[8px]"
@@ -55,16 +55,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <motion.button
-          onClick={() => navigate("/")}
-          className="btn btn-ghost text-xl"
-          animate={{
-            color: ["#ff5733", "#33ff33", "#8a33ff", "#ce9733"],
-            transition: { duration: 7, repeat: Infinity },
-          }}
-        >
-          WorkElebate
-        </motion.button>
+        <Brand />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">

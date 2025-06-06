@@ -10,7 +10,7 @@ import { AuthContext } from "./AuthContext";
 import { auth } from "../../firebase/firebase.init";
 
 const AuthProvider = ({ children }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
   const googleProvder = new GoogleAuthProvider();
 

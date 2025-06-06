@@ -18,8 +18,9 @@ const Jobcard = ({ job }) => {
   return (
     <div
       className="card bg-base-100 max-w-96 shadow-sm hover:scale-101 hover:shadow-lg hover:border border-amber-500 transition-all 
-       duration-200 ease-in-out
+       duration-200 ease-in-out cursor-pointer
       "
+      onClick={() => navigate(`/jobs/${_id}`)}
     >
       <div className="flex items-center  gap-2">
         <img src={company_logo} width={60} />
@@ -46,7 +47,7 @@ const Jobcard = ({ job }) => {
         <p>{description}</p>
         <div className="card-actions mt-4">
           {requirements.map((req, idx) => (
-            <div ke={idx} className="badge badge-outline">
+            <div key={idx} className="badge badge-outline">
               {req}
             </div>
           ))}

@@ -21,3 +21,6 @@ body {
 .banner-container {
   @apply lg:flex flex-row-reverse items-center   justify-between gap-8 p-4  rounded-md;
 }
+.hover-effect {
+  @apply hover:scale-101 hover:shadow-lg hover:border border-amber-500 transition-all duration-200 ease-in-out
+}
