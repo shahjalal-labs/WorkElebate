@@ -18,6 +18,11 @@
 │   │   ├── LottieAnimation.jsx
 │   │   └── motion.js
 │   ├── App.jsx
+│   ├── assets
+│   │   └── images
+│   │       ├── index.js
+│   │       ├── jobseeker1.jpg
+│   │       └── jobseeker2.jpg
 │   ├── contexts
 │   │   └── AuthContext
 │   │       ├── AuthContext.jsx
@@ -25,7 +30,8 @@
 │   ├── firebase
 │   │   └── firebase.init.js
 │   ├── hooks
-│   │   └── useAuth.jsx
+│   │   ├── useAuth.jsx
+│   │   └── useHelmet.jsx
 │   ├── index.css
 │   ├── main.jsx
 │   ├── modules
@@ -36,6 +42,7 @@
 │   │   │   │   ├── constant.js
 │   │   │   │   ├── SideBarCard.jsx
 │   │   │   │   ├── SigninForm.jsx
+│   │   │   │   ├── Signout.jsx
 │   │   │   │   ├── SignUpForm.jsx
 │   │   │   │   └── SocialLogin.jsx
 │   │   │   ├── index.js
@@ -44,9 +51,16 @@
 │   │   │       ├── Signin.jsx
 │   │   │       └── SignUp.jsx
 │   │   ├── jobs
+│   │   │   ├── AuthRoute.jsx
 │   │   │   ├── components
+│   │   │   │   └── Jobcard.jsx
 │   │   │   ├── index.js
+│   │   │   ├── JobRoute.jsx
 │   │   │   └── pages
+│   │   │       ├── JobApply.jsx
+│   │   │       ├── JobDetails.jsx
+│   │   │       ├── Jobs.jsx
+│   │   │       └── ThankYou.jsx
 │   │   ├── landing
 │   │   │   ├── home
 │   │   │   │   ├── Banner
@@ -55,14 +69,22 @@
 │   │   │   │   │   └── Banner.jsx
 │   │   │   │   └── Home.jsx
 │   │   │   └── index.js
+│   │   ├── myApplication
+│   │   │   ├── component
+│   │   │   │   └── ApplicationTable.jsx
+│   │   │   └── pages
+│   │   │       └── MyApplication.jsx
 │   │   ├── shared
 │   │   │   ├── Layout
 │   │   │   │   ├── AuthLayout.jsx
 │   │   │   │   ├── CommonFooter.jsx
 │   │   │   │   ├── index.js
+│   │   │   │   ├── NavbarDrawer.jsx
 │   │   │   │   ├── Navbar.jsx
-│   │   │   │   └── RootLayout.jsx
+│   │   │   │   ├── RootLayout.jsx
+│   │   │   │   └── Spinner.jsx
 │   │   │   └── ui
+│   │   │       ├── Brand.jsx
 │   │   │       ├── Button.jsx
 │   │   │       ├── index.js
 │   │   │       └── Input.jsx
@@ -82,9 +104,14 @@
 │   │           ├── index.js
 │   │           ├── pages
 │   │           └── SeekerLayout.jsx
-│   └── router
-│       └── router.jsx
+│   ├── router
+│   │   ├── ProtectedRoute.jsx
+│   │   └── router.jsx
+│   └── utils
+│       ├── axiosInstance.js
+│       ├── fetchData.js
+│       └── TypeWriterEffect.jsx
 ├── structure.md
 └── vite.config.js
 
-34 directories, 54 files
+40 directories, 75 files

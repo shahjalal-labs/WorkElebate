@@ -13,11 +13,7 @@ const AuthRoute = {
 
     {
       path: "signup",
-      element: (
-        <ProtectedRoute>
-          <SignUp />,
-        </ProtectedRoute>
-      ),
+      element: <SignUp />,
     },
     {
       path: "forgot-pass",

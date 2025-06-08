@@ -1,6 +1,8 @@
-import axios from "axios";
+import axiosInstance from "./axiosInstance";
 
-export const fetchData = async (url) => {
-  const { data } = await axios.get(url);
+export const fetchData = async (endpoint, query = {}) => {
+  const { data } = await axiosInstance.get(endpoint, {
+    params: query,
+  });
   return data;
 };

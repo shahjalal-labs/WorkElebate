@@ -1,7 +1,9 @@
-import React from "react";
-import { useParams } from "react-router";
+import { motion } from "motion/react";
+import { Link, useParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { fetchData } from "../../../utils/fetchData";
+import { leftToRight } from "../../../animation/motion";
+import UseHelmet from "../../../hooks/useHelmet";
 
 const JobDetailsPage = () => {
   const { id } = useParams();
@@ -32,8 +34,9 @@ const JobDetailsPage = () => {
     );
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <div className="card bg-base-100 shadow-xl">
+    <motion.div className="max-w-4xl mx-auto p-6 " {...leftToRight}>
+      <UseHelmet title="Job Details" />
+      <div className="card bg-base-100 shadow-xl hover-effect">
         <div className="card-body">
           <div className="flex items-center gap-4 mb-4">
             <img
@@ -42,7 +45,9 @@ const JobDetailsPage = () => {
               className="w-16 h-16 rounded-full"
             />
             <div>
-              <h2 className="card-title text-2xl">{job.title}</h2>
+              <h2 className="card-title text-2xl max-sm:text-xl">
+                {job.title}
+              </h2>
               <p className="text-gray-500">{job.company}</p>
             </div>
           </div>
@@ -89,18 +94,20 @@ const JobDetailsPage = () => {
             <p>HR Name: {job.hr_name}</p>
             <p>
               Email:{" "}
-              <a className="text-primary" href={`mailto:${job.hr_email}`}>
+              <Link className="text-primary" href={`mailto:${job.hr_email}`}>
                 {job.hr_email}
-              </a>
+              </Link>
             </p>
           </div>
 
           <div className="card-actions justify-end">
-            <button className="btn btn-primary w-full">Apply Now</button>
+            <button className="btn btn-primary w-full">
+              <Link to={`/jobs/applyjob/${id}`}>Apply Now</Link>
+            </button>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

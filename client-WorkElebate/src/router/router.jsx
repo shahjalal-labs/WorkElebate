@@ -5,6 +5,9 @@ import ProtectedRoute from "./ProtectedRoute";
 import AuthRoute from "../modules/jobs/AuthRoute";
 import jobRoute from "../modules/jobs/JobRoute";
 import JobDetails from "../modules/jobs/pages/JobDetails";
+import ThankYou from "../modules/jobs/pages/ThankYou";
+import JobApply from "../modules/jobs/pages/JobApply";
+import MyApplication from "../modules/myApplication/pages/MyApplication";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +19,28 @@ const router = createBrowserRouter([
         Component: App,
       },
       {
+        path: "jobs/thankyou",
+        Component: ThankYou,
+      },
+      {
+        path: "jobs/applyjob/:id",
+        Component: JobApply,
+      },
+      {
         path: "jobs/:id",
-        element: <ProtectedRoute><JobDetails />,</ProtectedRoute>
+        element: (
+          <ProtectedRoute>
+            <JobDetails />,
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "myApplications",
+        element: (
+          <ProtectedRoute>
+            <MyApplication />,
+          </ProtectedRoute>
+        ),
       },
     ],
   },

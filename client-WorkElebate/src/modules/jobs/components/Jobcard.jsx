@@ -17,9 +17,7 @@ const Jobcard = ({ job }) => {
   } = job;
   return (
     <div
-      className="card bg-base-100 max-w-96 shadow-sm hover:scale-101 hover:shadow-lg hover:border border-amber-500 transition-all 
-       duration-200 ease-in-out cursor-pointer
-      "
+      className="card bg-base-100 max-w-96 shadow-sm hover-effect cursor-pointer"
       onClick={() => navigate(`/jobs/${_id}`)}
     >
       <div className="flex items-center  gap-2">

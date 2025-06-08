@@ -1,16 +1,9 @@
 import { motion } from "motion/react";
+import { Link } from "react-router";
 
 const BannerCard = () => {
   return (
     <div className="flex-1 max-lg:mt-10">
-      {/* <motion.h1 
-        animate={{
-            rotate: 180,
-            x: 200,
-            y: -200,
-            transition: {duration: 4}
-        }}
-      className="text-5xl font-bold">Latest Jobs For you!</motion.h1> */}
       <motion.h1
         initial={{ scale: 0 }}
         animate={{ scale: 1, transition: { duration: 4 } }}
@@ -33,7 +26,9 @@ const BannerCard = () => {
         globally, effortlessly. Connecting job seekers and employers without
         borders. Find talent or your next opportunity — anytime, anywhere.
       </p>
-      <button className="btn btn-primary">Get Started</button>
+      <button className="btn btn-info btn-active rounded-full text-white">
+        <Link to="/jobs">Explore Jobs</Link>
+      </button>
     </div>
   );
 };
