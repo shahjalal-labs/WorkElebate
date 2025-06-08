@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         path: "jobs/:id",
         element: (
           <ProtectedRoute>
-            <JobDetails />,
+            <JobDetails />
           </ProtectedRoute>
         ),
       },
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         path: "myApplications",
         element: (
           <ProtectedRoute>
-            <MyApplication />,
+            <MyApplication />
           </ProtectedRoute>
         ),
       },

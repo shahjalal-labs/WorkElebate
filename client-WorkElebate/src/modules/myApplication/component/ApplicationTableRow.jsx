@@ -19,13 +19,10 @@ const ApplicationTableRow = ({ application, index }) => {
         </div>
       </td>
       <td>
-        Zemlak, Daniel and Leannon
+        {Math.floor(Math.random() * (10000 - 1000)) + 1000} BDT
         <br />
-        <span className="badge badge-ghost badge-sm">
-          Desktop Support Technician
-        </span>
+        <span className="adge  badge-sm">{application.jobId}</span>
       </td>
-      <td>Purple</td>
       <th>
         <button className="btn btn-ghost btn-xs">details</button>
       </th>

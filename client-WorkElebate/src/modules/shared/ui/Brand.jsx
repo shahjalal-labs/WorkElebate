@@ -8,7 +8,7 @@ const Brand = () => {
     <div>
       <motion.button
         onClick={() => navigate("/")}
-        className="btn btn-ghost text-xl"
+        className="text-xl ml-2"
         animate={{
           color: ["#ff5733", "#33ff33", "#8a33ff", "#ce9733"],
           transition: { duration: 7, repeat: Infinity },

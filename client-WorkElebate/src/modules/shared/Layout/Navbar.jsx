@@ -8,14 +8,38 @@ import Brand from "../ui/Brand";
 const Navbar = () => {
   const { user } = useAuth();
 
+  const link = (
+    <>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <details>
+          <summary>Parent</summary>
+          <ul className="p-2">
+            <li>
+              <a>Submenu 1</a>
+            </li>
+            <li>
+              <a>Submenu 2</a>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <Link to="/myapplications">My Application</Link>
+      </li>
+    </>
+  );
+
   return (
     <motion.nav
       className="navbar bg-base-100 shadow-sm z-10 sticky top-[8px]"
       {...topToBottom}
     >
       <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+        <div className="dropdown dropdown-right dropdown-hover ">
+          <div tabIndex={0} role="button" className=" lg:hidden cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -34,51 +58,15 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 min-w-[150px] p-2 shadow mt-6 border"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {link}
           </ul>
         </div>
         <Brand />
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1">{link}</ul>
       </div>
       <div className="navbar-end">
         {user ? (
