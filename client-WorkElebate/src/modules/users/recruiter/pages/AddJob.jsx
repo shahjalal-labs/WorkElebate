@@ -34,7 +34,7 @@ const AddJob = () => {
         text: "Job Posted Successfully!",
       });
       console.log("success");
-      setTimeout(() => navigate("/recruiter/mypostedjob"), 1500);
+      setTimeout(() => navigate("/recruiter/mypostedjob"), 3500);
     },
     onError: (err) => {
       console.log(err, "AddJob.jsx", 42);
@@ -53,7 +53,8 @@ const AddJob = () => {
       .map((item) => item.trim());
 
     const { min, max, currency } = newJob;
-    newJob.salary = {
+    newJob.status = "active";
+    newJob.salaryRange = {
       min,
       max,
       currency,

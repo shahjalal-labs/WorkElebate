@@ -8,7 +8,7 @@ const ApplicationTable = ({ applications }) => {
         {/*table head */}
         <ApplicationTableHead />
         <tbody>
-          {applications.map((application, idx) => (
+          {applications?.map((application, idx) => (
             <ApplicationTableRow
               application={application}
               key={idx}
