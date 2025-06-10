@@ -71,7 +71,9 @@
 │   │   │   └── index.js
 │   │   ├── myApplication
 │   │   │   ├── component
-│   │   │   │   └── ApplicationTable.jsx
+│   │   │   │   ├── ApplicationTableHead.jsx
+│   │   │   │   ├── ApplicationTable.jsx
+│   │   │   │   └── ApplicationTableRow.jsx
 │   │   │   └── pages
 │   │   │       └── MyApplication.jsx
 │   │   ├── shared
@@ -94,11 +96,19 @@
 │   │       │   ├── components
 │   │       │   ├── index.js
 │   │       │   └── pages
-│   │       ├── giver
+│   │       ├── recruiter
 │   │       │   ├── components
-│   │       │   ├── GiverLayout.jsx
+│   │       │   │   ├── AddJobBasicInfo.jsx
+│   │       │   │   ├── AddJobFilter.jsx
+│   │       │   │   ├── AddJobSelect.jsx
+│   │       │   │   ├── Dropdown.jsx
+│   │       │   │   └── SalaryRange.jsx
 │   │       │   ├── index.js
-│   │       │   └── pages
+│   │       │   ├── pages
+│   │       │   │   ├── AddJob.jsx
+│   │       │   │   └── MyPostedJobs.jsx
+│   │       │   ├── recruiter.constant.js
+│   │       │   └── RecruiterLayout.jsx
 │   │       └── seeker
 │   │           ├── components
 │   │           ├── index.js
@@ -109,9 +119,12 @@
 │   │   └── router.jsx
 │   └── utils
 │       ├── axiosInstance.js
+│       ├── ErrorMessage.jsx
 │       ├── fetchData.js
+│       ├── navigate.jsx
+│       ├── PageIntro.jsx
 │       └── TypeWriterEffect.jsx
 ├── structure.md
 └── vite.config.js
 
-40 directories, 75 files
+40 directories, 88 files

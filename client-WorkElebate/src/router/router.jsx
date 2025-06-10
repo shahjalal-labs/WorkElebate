@@ -8,6 +8,8 @@ import JobDetails from "../modules/jobs/pages/JobDetails";
 import ThankYou from "../modules/jobs/pages/ThankYou";
 import JobApply from "../modules/jobs/pages/JobApply";
 import MyApplication from "../modules/myApplication/pages/MyApplication";
+import AddJob from "../modules/users/recruiter/pages/AddJob";
+import MyPostedJobs from "../modules/users/recruiter/pages/MyPostedJobs";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +26,11 @@ const router = createBrowserRouter([
       },
       {
         path: "jobs/applyjob/:id",
-        Component: JobApply,
+        element: (
+          <ProtectedRoute>
+            <JobApply />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "jobs/:id",
@@ -39,6 +45,23 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <MyApplication />
+          </ProtectedRoute>
+        ),
+      },
+      // recruiter routes
+      {
+        path: "recruiter/addjob",
+        element: (
+          <ProtectedRoute>
+            <AddJob />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "recruiter/mypostedjob",
+        element: (
+          <ProtectedRoute>
+            <MyPostedJobs />
           </ProtectedRoute>
         ),
       },

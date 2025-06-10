@@ -17,6 +17,7 @@
         "react-day-picker": "^9.7.0",
         "react-dom": "^19.1.0",
         "react-helmet-async": "^2.0.5",
+        "react-hook-form": "^7.57.0",
         "react-hooks-testing-library": "^0.6.0",
         "react-hot-toast": "^2.5.2",
         "react-icons": "^5.5.0",
@@ -806,6 +807,8 @@
     "react-fast-compare": ["react-fast-compare@3.2.2", "", {}, "sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ=="],
 
     "react-helmet-async": ["react-helmet-async@2.0.5", "", { "dependencies": { "invariant": "^2.2.4", "react-fast-compare": "^3.2.2", "shallowequal": "^1.1.0" }, "peerDependencies": { "react": "^16.6.0 || ^17.0.0 || ^18.0.0" } }, "sha512-rYUYHeus+i27MvFE+Jaa4WsyBKGkL6qVgbJvSBoX8mbsWoABJXdEO0bZyi0F6i+4f0NuIb8AvqPMj3iXFHkMwg=="],
+
+    "react-hook-form": ["react-hook-form@7.57.0", "", { "peerDependencies": { "react": "^16.8.0 || ^17 || ^18 || ^19" } }, "sha512-RbEks3+cbvTP84l/VXGUZ+JMrKOS8ykQCRYdm5aYsxnDquL0vspsyNhGRO7pcH6hsZqWlPOjLye7rJqdtdAmlg=="],
 
     "react-hooks-testing-library": ["react-hooks-testing-library@0.6.0", "", { "dependencies": { "@testing-library/react-hooks": "~1.0.2" }, "peerDependencies": { "react": "^16.8.0", "react-test-renderer": "^16.8.0" } }, "sha512-VzOF4ZYMWR2B0RQgRXmxolmSMy7uvUPgmVm/CqSeyTRiITMQXiTywK65sjoIHzsQ6tW1R8hbljSYU02PgGdvCA=="],
 

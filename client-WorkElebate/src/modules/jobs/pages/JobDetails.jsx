@@ -57,8 +57,8 @@ const JobDetailsPage = () => {
             <div className="badge badge-outline">{job.jobType}</div>
             <div className="badge badge-outline">{job.category}</div>
             <div className="badge badge-outline">
-              Salary: {job.salaryRange.min}-{job.salaryRange.max}{" "}
-              {job.salaryRange.currency.toUpperCase()}
+              Salary: {job?.salaryRange?.min}-{job?.salaryRange?.max}{" "}
+              {job?.salaryRange?.currency?.toUpperCase()}
             </div>
             <div className="badge badge-outline">
               Deadline: {job.applicationDeadline}
@@ -101,9 +101,12 @@ const JobDetailsPage = () => {
           </div>
 
           <div className="card-actions justify-end">
-            <button className="btn btn-primary w-full">
-              <Link to={`/jobs/applyjob/${id}`}>Apply Now</Link>
-            </button>
+            <Link
+              className="btn btn-primary w-full"
+              to={`/jobs/applyjob/${id}`}
+            >
+              Apply Now
+            </Link>
           </div>
         </div>
       </div>

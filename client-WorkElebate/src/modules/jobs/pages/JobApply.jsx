@@ -86,117 +86,119 @@ const JobApply = () => {
   }
   return (
     <>
-      <h1 className="text-2xl font-bold mt-6 text-center">Apply for Job</h1>
+      <div className="min-h-[80vh] flex flex-col justify-center items-center">
+        <h1 className="text-2xl font-bold mt-6 text-center">Apply for Job</h1>
 
-      <div className="flex flex-col-reverse justify-cente items-center lg:flex-row">
-        <motion.div
-          animate={animate}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        >
-          <img src={jobseeker1} />
-          {/* <img src={jobseeker2} /> */}
-        </motion.div>
-        <motion.div className="max-w-2xl mx-auto px-6 py-10" {...rightToLeft}>
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-4 bg-base-100 p-6 rounded-lg shadow"
+        <div className="flex flex-col-reverse justify-cente items-center lg:flex-row">
+          <motion.div
+            animate={animate}
+            transition={{
+              duration: 18,
+              repeat: Infinity,
+              ease: "linear",
+            }}
           >
-            <div>
-              <label className="label">
-                <span className="label-text">Full Name</span>
-              </label>
-              <input
-                name="name"
-                type="text"
-                value={form.name}
-                onChange={handleChange}
-                className="input input-bordered w-full"
-                required
-                placeholder="Full Name"
-              />
-            </div>
-            <div>
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
-                name="applicant"
-                type="email"
-                value={user?.email}
-                className="input input-bordered w-full"
-                required
-                readOnly
-              />
-            </div>
-
-            <div>
-              <label className="label">
-                <span className="label-text">Github Url</span>
-              </label>
-              <input
-                name="github"
-                type="url"
-                value={form.github}
-                onChange={handleChange}
-                className="input input-bordered w-full"
-                required
-                placeholder="Github Url"
-              />
-            </div>
-            <div>
-              <label className="label">
-                <span className="label-text">Linkedin Url</span>
-              </label>
-              <input
-                name="linkedin"
-                type="text"
-                value={form.linkedin}
-                onChange={handleChange}
-                className="input input-bordered w-full"
-                required
-                placeholder="Linkedin Url"
-              />
-            </div>
-
-            <div>
-              <label className="label">
-                <span className="label-text">
-                  Resume Link (Google Drive, etc.)
-                </span>
-              </label>
-              <input
-                name="resume"
-                type="url"
-                value={form.resumeLink}
-                onChange={handleChange}
-                className="input input-bordered w-full"
-                required
-                placeholder="Resume Link"
-              />
-            </div>
-
-            <div>
-              <button className="btn btn-primary w-full" disabled={isPending}>
-                {isPending ? "Submitting..." : "Submit Application"}
-              </button>
-            </div>
-
-            {isSuccess && (
-              <div className="alert alert-success mt-4">
-                Application submitted successfully!
+            <img src={jobseeker1} />
+            {/* <img src={jobseeker2} /> */}
+          </motion.div>
+          <motion.div className="max-w-2xl mx-auto px-6 py-10" {...rightToLeft}>
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4 bg-base-100 p-6 rounded-lg shadow"
+            >
+              <div>
+                <label className="label">
+                  <span className="label-text">Full Name</span>
+                </label>
+                <input
+                  name="name"
+                  type="text"
+                  value={form.name}
+                  onChange={handleChange}
+                  className="input input-bordered w-full"
+                  required
+                  placeholder="Full Name"
+                />
               </div>
-            )}
-            {isError && (
-              <div className="alert alert-error mt-4">
-                Error: {error.message}
+              <div>
+                <label className="label">
+                  <span className="label-text">Email</span>
+                </label>
+                <input
+                  name="applicant"
+                  type="email"
+                  value={user?.email}
+                  className="input input-bordered w-full"
+                  required
+                  readOnly
+                />
               </div>
-            )}
-          </form>
-        </motion.div>
+
+              <div>
+                <label className="label">
+                  <span className="label-text">Github Url</span>
+                </label>
+                <input
+                  name="github"
+                  type="url"
+                  value={form.github}
+                  onChange={handleChange}
+                  className="input input-bordered w-full"
+                  required
+                  placeholder="Github Url"
+                />
+              </div>
+              <div>
+                <label className="label">
+                  <span className="label-text">Linkedin Url</span>
+                </label>
+                <input
+                  name="linkedin"
+                  type="text"
+                  value={form.linkedin}
+                  onChange={handleChange}
+                  className="input input-bordered w-full"
+                  required
+                  placeholder="Linkedin Url"
+                />
+              </div>
+
+              <div>
+                <label className="label">
+                  <span className="label-text">
+                    Resume Link (Google Drive, etc.)
+                  </span>
+                </label>
+                <input
+                  name="resume"
+                  type="url"
+                  value={form.resumeLink}
+                  onChange={handleChange}
+                  className="input input-bordered w-full"
+                  required
+                  placeholder="Resume Link"
+                />
+              </div>
+
+              <div>
+                <button className="btn btn-primary w-full" disabled={isPending}>
+                  {isPending ? "Submitting..." : "Submit Application"}
+                </button>
+              </div>
+
+              {isSuccess && (
+                <div className="alert alert-success mt-4">
+                  Application submitted successfully!
+                </div>
+              )}
+              {isError && (
+                <div className="alert alert-error mt-4">
+                  Error: {error.message}
+                </div>
+              )}
+            </form>
+          </motion.div>
+        </div>
       </div>
     </>
   );

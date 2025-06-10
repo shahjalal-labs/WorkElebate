@@ -1,7 +1,12 @@
+import { Link } from "react-router";
+import useCustomNavigate from "../../../utils/navigate";
+import Navigate from "../../../utils/navigate";
+
 const ApplicationTableRow = ({ application, index }) => {
   console.log(application, "ApplicationTableRow.jsx", 2);
 
-  const { company_logo, title, company } = application;
+  const { company_logo, title, company, jobId } = application;
+  console.log(jobId, "ApplicationTableRow.jsx", 5);
   return (
     <tr>
       <td>{index}</td>
@@ -24,7 +29,11 @@ const ApplicationTableRow = ({ application, index }) => {
         <span className="adge  badge-sm">{application.jobId}</span>
       </td>
       <th>
-        <button className="btn btn-ghost btn-xs">details</button>
+        <Link to={`/jobs/${jobId}`}><button
+          className="btn btn-ghost btn-xs"
+        >
+          details
+        </button></Link>
       </th>
     </tr>
   );

@@ -5,6 +5,7 @@ export default function TypewriterText({
   loop = true,
   cursor = true,
   delay = 1000,
+  speed = 100,
 }) {
   return (
     <span style={{ whiteSpace: "pre" }}>
@@ -12,8 +13,8 @@ export default function TypewriterText({
         words={words}
         loop={loop}
         cursor={cursor}
-        cursorStyle="|"
-        typeSpeed={80}
+        cursorStyle="✍️ "
+        typeSpeed={speed}
         deleteSpeed={50}
         delaySpeed={delay}
       />
