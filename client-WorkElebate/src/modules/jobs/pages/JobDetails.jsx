@@ -15,7 +15,11 @@ const JobDetailsPage = () => {
     error,
   } = useQuery({
     queryKey: ["jobDetails", id],
-    queryFn: () => fetchData(`http://localhost:3000/jobs/${id}`),
+    // queryFn: () => fetchData(`http://localhost:3000/jobs/${id}`),
+    queryFn: () =>
+      fetchData(
+        `https://career-code-server-for-recruiter-pa-nu.vercel.app/jobs/${id}`,
+      ),
     enabled: !!id,
   });
 

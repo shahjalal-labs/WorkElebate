@@ -10,6 +10,7 @@ import JobApply from "../modules/jobs/pages/JobApply";
 import MyApplication from "../modules/myApplication/pages/MyApplication";
 import AddJob from "../modules/users/recruiter/pages/AddJob";
 import MyPostedJobs from "../modules/users/recruiter/pages/MyPostedJobs";
+import ApplicantForPostedJobs from "../modules/users/recruiter/pages/ApplicantForPostedJobs";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <MyPostedJobs />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "recruiter/applicantforpostedjobs",
+        element: (
+          <ProtectedRoute>
+            <ApplicantForPostedJobs />
           </ProtectedRoute>
         ),
       },

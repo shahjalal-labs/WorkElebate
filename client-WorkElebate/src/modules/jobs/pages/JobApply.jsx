@@ -12,7 +12,8 @@ import useAuth from "../../../hooks/useAuth";
 
 const applyForJob = async (application) => {
   const { data } = await axios.post(
-    "http://localhost:3000/applications",
+    // "http://localhost:3000/applications",
+    "https://career-code-server-for-recruiter-pa-nu.vercel.app/applications",
     application,
   );
   return data;

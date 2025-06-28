@@ -18,36 +18,39 @@ const MyPostedJobs = () => {
     isLoading,
     isError,
     error,
+    isSuccess,
   } = useQuery({
-    queryKey: ["jobs"],
+    queryKey: ["myPostedjobs", user?.email],
     queryFn: () =>
       fetchData("jobs/applications", {
         email: user?.email,
       }),
   });
-  console.log(`myPostedJobs`, myPostedJobs, "MyPostedJobs.jsx", 22);
+  // console.log(`myPostedJobs`, myPostedJobs, "MyPostedJobs.jsx", 22);
   return (
     <div className="mb-16">
       <PageIntro h1={h} p={p} />
       {/* render jobs application in the ui by table*/}
-      <div className="overflow-x-auto">
-        <table className="table">
-          <ApplicationTableHead
-            h1="#"
-            h2="Job Title"
-            h3="Deadline"
-            h4="Count"
-            h5="View Applications"
-          />
-          <tbody>
-            {myPostedJobs?.map((job, idx) => (
-              <PostedJobTableRow key={idx} index={idx + 1} postedJob={job} />
-            ))}
-          </tbody>
-        </table>
-      </div>
       {isLoading && <Spinner />}
       {isError && <ErrorMessage error={error} />}
+      {isSuccess && (
+        <div className="overflow-x-auto">
+          <table className="table">
+            <ApplicationTableHead
+              h1="#"
+              h2="Job Title"
+              h3="Deadline"
+              h4="Count"
+              h5="View Applications"
+            />
+            <tbody>
+              {myPostedJobs?.map((job, idx) => (
+                <PostedJobTableRow key={idx} index={idx + 1} postedJob={job} />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 };
