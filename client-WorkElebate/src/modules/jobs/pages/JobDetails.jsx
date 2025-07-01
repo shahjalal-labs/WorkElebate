@@ -16,10 +16,9 @@ const JobDetailsPage = () => {
   } = useQuery({
     queryKey: ["jobDetails", id],
     // queryFn: () => fetchData(`https://workelevate-server-part3.vercel.app/jobs/${id}`),
+    // https://career-code-server-for-recruiter-pa-nu.vercel.app
     queryFn: () =>
-      fetchData(
-        `https://workelevate-server-part3.vercel.app/jobs/${id}`,
-      ),
+      fetchData(`https://workelevate-server-part3.vercel.app/jobs/${id}`),
     enabled: !!id,
   });
 
@@ -106,7 +105,7 @@ const JobDetailsPage = () => {
 
           <div className="card-actions justify-end">
             <Link
-              className="btn btn-primary w-full"
+              className="btn btn-primary w-full rounded-full"
               to={`/jobs/applyjob/${id}`}
             >
               Apply Now

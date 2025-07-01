@@ -1,11 +1,8 @@
+# 📁 Project Structure
+
+```bash
 .
 ├── bun.lock
-├── dist
-│   ├── 200.html
-│   ├── assets
-│   │   ├── index-BX4pyhSA.css
-│   │   └── index-DgdMc73g.js
-│   └── index.html
 ├── eslint.config.js
 ├── index.html
 ├── package.json
@@ -102,10 +99,13 @@
 │   │       │   │   ├── AddJobFilter.jsx
 │   │       │   │   ├── AddJobSelect.jsx
 │   │       │   │   ├── Dropdown.jsx
-│   │       │   │   └── SalaryRange.jsx
+│   │       │   │   ├── PostedJobTableRow.jsx
+│   │       │   │   ├── SalaryRange.jsx
+│   │       │   │   └── TextArea.jsx
 │   │       │   ├── index.js
 │   │       │   ├── pages
 │   │       │   │   ├── AddJob.jsx
+│   │       │   │   ├── ApplicantForPostedJobs.jsx
 │   │       │   │   └── MyPostedJobs.jsx
 │   │       │   ├── recruiter.constant.js
 │   │       │   └── RecruiterLayout.jsx
@@ -119,12 +119,16 @@
 │   │   └── router.jsx
 │   └── utils
 │       ├── axiosInstance.js
+│       ├── customAlert.js
 │       ├── ErrorMessage.jsx
 │       ├── fetchData.js
 │       ├── navigate.jsx
 │       ├── PageIntro.jsx
+│       ├── postData.js
 │       └── TypeWriterEffect.jsx
 ├── structure.md
 └── vite.config.js
 
-40 directories, 88 files
+38 directories, 89 files
+
+```
