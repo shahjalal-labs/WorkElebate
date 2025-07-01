@@ -36,7 +36,7 @@ const Jobcard = ({ job }) => {
       <div className="card-body">
         <h2 className="card-title">
           {title}
-          <div className="badge badge-secondary">{status}</div>
+          <div className="badge badge-secondary h-fit"> {status}</div>
         </h2>
         <p>
           Salary: {salaryRange?.min} - {salaryRange?.max}{" "}
@@ -45,7 +45,7 @@ const Jobcard = ({ job }) => {
         <p>{description}</p>
         <div className="card-actions mt-4">
           {requirements.map((req, idx) => (
-            <div key={idx} className="badge badge-outline">
+            <div key={idx} className="badge badge-outline h-fit">
               {req}
             </div>
           ))}

@@ -5,10 +5,10 @@ import { Suspense } from "react";
 import Spinner from "../../shared/Layout/Spinner";
 
 const Home = () => {
-  // const jobPromise = fetch("http://localhost:3000/jobs").then((res) =>
-  const jobPromise = fetch(
-    "https://career-code-server-for-recruiter-pa-nu.vercel.app/jobs",
-  ).then((res) => res.json());
+  // const jobPromise = fetch("https://workelevate-server-part3.vercel.app/jobs").then((res) =>
+  const jobPromise = fetch("https://workelevate-server-part3.vercel.app/jobs", {
+    credentials: "include",
+  }).then((res) => res.json());
   return (
     <div>
       <UseHelmet title="Home" />
