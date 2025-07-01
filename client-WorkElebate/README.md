@@ -292,3 +292,13 @@ npm run lint Run ESLint linter`
 ### Preview:
 
 ##### `Desktop:`
+
+![Screenshot](src/assets/screenshots/preview/DesktopHomepage.png)
+
+##### `Laptop:`
+
+![Screenshot](src/assets/screenshots/preview/LaptopHomepage.png)
+
+##### `Mobile:`
+
+![Screenshot](src/assets/screenshots/preview/MobileHomepage.png)
