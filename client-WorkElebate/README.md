@@ -272,3 +272,7 @@ npm run lint Run ESLint linter`
 ### Developer info:
 
 ![Screenshot](src/assets/screenshots/ss-10-41-05-AM_01-07-25.png)
+
+### Preview:
+
+##### `Desktop:`

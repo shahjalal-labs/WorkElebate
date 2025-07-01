@@ -4,6 +4,14 @@ const CommonFooter = () => {
       <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
         <nav>
           <h6 className="footer-title">Services</h6>
+          <a
+            className="link link-hover"
+            href="https://github.com/shahjalal-labs/WorkElebate/tree/main/client-WorkElebate"
+            target="_blank"
+            rel="noreferrer"
+          >
+            source code
+          </a>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
           <a className="link link-hover">Marketing</a>
