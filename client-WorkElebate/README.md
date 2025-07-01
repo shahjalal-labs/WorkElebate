@@ -258,3 +258,17 @@ npm run dev Start development server
 npm run build Build production assets
 npm run preview Preview production build
 npm run lint Run ESLint linter`
+
+---
+
+## Contributing
+
+## Contributions are always welcome!
+
+## License
+
+## [MIT](LICENSE)
+
+### Developer info:
+
+![Screenshot](src/assets/screenshots/ss-10-41-05-AM_01-07-25.png)
